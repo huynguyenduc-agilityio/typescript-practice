@@ -1,9 +1,9 @@
 import { LocalStorage, redirect } from '../helpers';
-import { AuthKeys, DEFAULT_ROUTER } from '../types';
+import { LocalStorageType, DEFAULT_ROUTER } from '../types';
 import { routes } from './routes';
 
 export const router = (pathName: string): void => {
-  const isAuth: string = LocalStorage.getItem(AuthKeys.SIGNIN);
+  const isAuth: string = LocalStorage.getItem(LocalStorageType.SIGNIN);
 
   // Find current router
   const currentRouter = routes.find((route) => {
