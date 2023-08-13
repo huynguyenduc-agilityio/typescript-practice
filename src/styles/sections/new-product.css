@@ -1,0 +1,36 @@
+.new-product {
+  margin-top: 56px;
+  margin-bottom: 40px;
+}
+
+.new-product .product-image-frame {
+  height: 278px;
+}
+
+.new-product .product-image {
+  height: 260px;
+  width: 314px;
+}
+
+.new-product .product-image-frame {
+  background: radial-gradient(
+    138.81% 138.29% at 1.22% 1.08%,
+    #fbfbfb 0%,
+    #d3d3d3 100%
+  );
+}
+/* Tablet */
+@media (min-width: 768px) {
+  .new-product {
+    margin-top: 86px;
+    margin-bottom: 80px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .new-product {
+    margin-top: 88px;
+    margin-bottom: 88px;
+  }
+}

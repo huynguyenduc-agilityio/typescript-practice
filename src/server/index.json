@@ -1,0 +1,149 @@
+{
+  "users": [
+    {
+      "email": "huy.nguyenduc@asnet.com.vn",
+      "password": "Duchuy0511",
+      "id": 1
+    },
+    {
+      "email": "huy.nguyenduc@asnet.com.vn",
+      "password": "Duchuy0511",
+      "id": 2
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "image": "/images/new-product-1.png",
+      "name": "Brand Name 1",
+      "description": "Product description here 1",
+      "price": 2995,
+      "stockCount": 10,
+      "createAt": "2023-07-22T18:20:25Z",
+      "totalSold": 10,
+      "category": "guitars"
+    },
+    {
+      "id": 2,
+      "image": "/images/new-product-2.png",
+      "name": "Brand Name 2",
+      "description": "Product description here 2",
+      "price": 2995,
+      "stockCount": 10,
+      "createAt": "2023-07-21T12:00:00Z",
+      "totalSold": 10,
+      "category": "guitars"
+    },
+    {
+      "id": 3,
+      "image": "/images/new-product-3.png",
+      "name": "Brand Name 3",
+      "description": "Product description here 3",
+      "price": 2995,
+      "stockCount": 10,
+      "createAt": "2023-07-20T10:15:30Z",
+      "totalSold": 10,
+      "category": "guitars"
+    },
+    {
+      "id": 4,
+      "image": "/images/new-product-4.png",
+      "name": "Brand Name 4",
+      "description": "Product description here 4",
+      "price": 2995,
+      "stockCount": 10,
+      "createAt": "2023-07-19T10:15:30Z",
+      "totalSold": 10,
+      "category": "guitars"
+    },
+    {
+      "id": 5,
+      "image": "/images/popular-1.png",
+      "name": "Brand Name 5",
+      "description": "Product description here 5",
+      "price": 2995,
+      "stockCount": 10,
+      "createAt": "2023-07-25T10:15:30Z",
+      "totalSold": 200,
+      "category": "accessories"
+    },
+    {
+      "id": 6,
+      "image": "/images/popular-2.png",
+      "name": "Brand Name 6",
+      "description": "Product description here 6",
+      "price": 2995,
+      "stockCount": 10,
+      "createAt": "2023-07-24T15:45:20Z",
+      "totalSold": 100,
+      "category": "accessories"
+    },
+    {
+      "id": 7,
+      "image": "/images/popular-3.png",
+      "name": "Brand Name 7",
+      "description": "Product description here 7",
+      "price": 2995,
+      "stockCount": 10,
+      "createAt": "2023-07-23T08:30:10Z",
+      "totalSold": 190,
+      "category": "accessories"
+    },
+    {
+      "id": 8,
+      "image": "/images/popular-4.png",
+      "name": "Brand Name 8",
+      "description": "Product description here 8",
+      "price": 2995,
+      "stockCount": 10,
+      "createAt": "2023-07-23T08:30:10Z",
+      "totalSold": 190,
+      "category": "accessories"
+    },
+    {
+      "id": 9,
+      "image": "/images/popular-4.png",
+      "name": "Brand Name 9",
+      "description": "Product description here 9",
+      "price": 2995,
+      "stockCount": 10,
+      "createAt": "2023-07-23T08:30:10Z",
+      "totalSold": 180,
+      "category": "accessories"
+    },
+    {
+      "id": 10,
+      "image": "/images/popular-4.png",
+      "name": "Brand Name 10",
+      "description": "Product description here 10",
+      "price": 2995,
+      "stockCount": 10,
+      "createAt": "2023-07-23T08:30:10Z",
+      "totalSold": 100,
+      "category": "accessories"
+    },
+    {
+      "id": 11,
+      "image": "/images/popular-2.png",
+      "name": "Brand Name 11",
+      "description": "Product description here 11",
+      "price": 2995,
+      "stockCount": 10,
+      "createAt": "2023-08-03T15:45:20Z",
+      "totalSold": 15,
+      "category": "accessories"
+    },
+    {
+      "id": 12,
+      "image": "/images/new-product-1.png",
+      "name": "Brand Name 12",
+      "description": "Product description here 12",
+      "price": 2995,
+      "stockCount": 10,
+      "createAt": "2023-08-02T15:45:20Z",
+      "totalSold": 23,
+      "category": "accessories"
+    }
+  ],
+  "cart": []
+}

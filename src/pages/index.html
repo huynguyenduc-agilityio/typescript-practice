@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Fullfilling dreams with strings attached" />
+    <title>CentralMusic</title>
+    <link rel="stylesheet" href="../styles/main.css" />
+    <script src="../script/main.ts" type="module" defer></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container flex-between">
+        <div class="header-bar">
+          <!-- Logo -->
+          <a class="logo" href="/">
+            <img
+              src="../assets/images/logo.png"
+              srcset="../assets/images/logo-small.png 480w, ../assets/images/logo.png 800w"
+              sizes="(max-width: 600px) 480px,
+        800px"
+              alt="CentralMusic"
+              class="logo-img"
+            />
+          </a>
+
+          <!-- Navbar -->
+          <nav class="navbar">
+            <ul class="navbar-list flex-center">
+              <li class="navbar-item">
+                <a href="/products" class="navbar-link">Guitars</a>
+              </li>
+              <li class="navbar-item">
+                <a href="javascript:void(0)" class="navbar-link">Accessories</a>
+              </li>
+              <li class="navbar-item">
+                <a href="javascript:void(0)" class="navbar-link">Storage</a>
+              </li>
+              <li class="navbar-item">
+                <a href="javascript:void(0)" class="navbar-link">Lessons</a>
+              </li>
+              <li class="navbar-item">
+                <a href="javascript:void(0)" class="navbar-link">Repairs</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Menu bar -->
+        <div class="menu-bar"></div>
+
+        <!-- Button -->
+        <div class="header-actions">
+          <a href="/cart" class="btn-icon btn-cart">
+            <img src="../assets/icons/cart.svg" alt="cart" />
+          </a>
+          <a href="/authentication" class="btn-icon btn-login">
+            <img src="../assets/icons/profile.svg" alt="profile" />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="main-content">
+      <!-- Banner -->
+      <section class="banner">
+        <div class="container">
+          <h1 class="banner-title">Fullfilling dreams with strings attached</h1>
+        </div>
+      </section>
+
+      <!-- Introduction -->
+      <section class="introduction">
+        <div class="container">
+          <div class="introduction-card flex-center">
+            <img
+              src="../assets/images/intro-mobile.png"
+              srcset="
+                ../assets/images/intro-mobile.png   328w,
+                ../assets/images/intro-tablet.png   894w,
+                ../assets/images/intro-desktop.png 1264w
+              "
+              sizes="(max-width: 600px) 328px,
+                (max-width: 1024px) 894px,
+                1264px"
+              alt="introduction"
+              class="introduction-background"
+            />
+            <div class="introduction-info">
+              <h2 class="introduction-title text-uppercase">FREE GUITAR LESSONS!</h2>
+              <p class="text-description-base introduction-description">
+                Purchase any guitar over $499.99 and recieve a one-hour guitar lesson free.
+              </p>
+              <button class="btn btn-main btn-more text-uppercase">LEARN MORE</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- New product -->
+      <div class="render-new-product"></div>
+
+      <!-- Popular -->
+      <div class="render-popular"></div>
+
+      <!-- Gear -->
+      <div class="render-gear"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <!-- Footer main-->
+      <div class="footer-main">
+        <div class="container">
+          <div class="footer-info">
+            <div class="footer-info-column flex-center">
+              <hr class="footer-info-strike" />
+              <h5 class="footer-info-header">My Account</h5>
+              <ul class="footer-info-list">
+                <li class="footer-info-item">
+                  <a href="javascript:void(0)" class="footer-info-link text-default">Overview</a>
+                </li>
+                <li class="footer-info-item">
+                  <a href="javascript:void(0)" class="footer-info-link text-default"
+                    >Order History</a
+                  >
+                </li>
+                <li class="footer-info-item">
+                  <a href="javascript:void(0)" class="footer-info-link text-default">Wishlist</a>
+                </li>
+                <li class="footer-info-item">
+                  <a href="javascript:void(0)" class="footer-info-link text-default"
+                    >Account information</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="footer-info-column flex-center">
+              <hr class="footer-info-strike" />
+              <h5 class="footer-info-header">Store</h5>
+              <ul class="footer-info-list">
+                <li class="footer-info-item">
+                  <a href="javascript:void(0)" class="footer-info-link text-default"
+                    >Security Notice</a
+                  >
+                </li>
+                <li class="footer-info-item">
+                  <a href="javascript:void(0)" class="footer-info-link text-default"
+                    >Location & Hours</a
+                  >
+                </li>
+                <li class="footer-info-item">
+                  <a href="javascript:void(0)" class="footer-info-link text-default">Rentals</a>
+                </li>
+                <li class="footer-info-item">
+                  <a href="javascript:void(0)" class="footer-info-link text-default"
+                    >Privacy Notice</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-wrapper">
+            <div class="footer-logo">
+              <img src="../assets/images/logo.png" alt="CentralMusic" />
+            </div>
+            <ul class="footer-social-list flex-center">
+              <li class="footer-social-item">
+                <a href="https://www.youtube.com/" class="footer-social-link btn-primary">
+                  <img
+                    src="../assets/icons/youtube.svg"
+                    class="footer-social-icon youtube"
+                    alt="youtube"
+                  />
+                </a>
+              </li>
+              <li class="footer-social-item">
+                <a href="https://www.twitter.com/" class="footer-social-link btn-primary">
+                  <img
+                    src="../assets/icons/twitter.svg"
+                    class="footer-social-icon twitter"
+                    alt="twitter"
+                  />
+                </a>
+              </li>
+              <li class="footer-social-item">
+                <a href="https://www.instagram.com/" class="footer-social-link btn-primary">
+                  <img
+                    src="../assets/icons/instagram.svg"
+                    class="footer-social-icon instagram"
+                    alt="instagram"
+                  />
+                </a>
+              </li>
+              <li class="footer-social-item">
+                <a href="https://www.facebook.com/" class="footer-social-link btn-primary">
+                  <img
+                    src="../assets/icons/facebook.svg"
+                    class="footer-social-icon facebook"
+                    alt="facebook"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Footer copyright-->
+      <div class="footer-copyright flex-center">
+        <div class="container">
+          <p class="text-default copyright-content">©2021 Music Store</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "name": "typescript-training",
+  "version": "1.0.0",
+  "description": "",
+  "source": "src/pages/*.html",
+  "scripts": {
+    "dev": "concurrently \"npm start\" \"npm run start-db\"",
+    "start-db": "json-server --watch src/server/index.json",
+    "start": "rm -rf dist && rm -rf .parcel-cache && parcel src/pages/*.html",
+    "build": "rm -rf dist && rm -rf .parcel-cache && parcel build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.4.5",
+    "@types/uuid": "^9.0.2",
+    "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/parser": "^6.1.0",
+    "buffer": "^5.5.0||^6.0.0",
+    "concurrently": "^8.2.0",
+    "crypto-browserify": "^3.12.0",
+    "eslint": "8.2.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "2.25.3",
+    "eslint-plugin-jsx-a11y": "6.5.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "events": "^3.1.0",
+    "json-server": "^0.17.3",
+    "os-browserify": "^0.3.0",
+    "parcel": "2.9.3",
+    "parcel-reporter-static-files-copy": "^1.5.0",
+    "path-browserify": "^1.0.0",
+    "prettier": "^3.0.0",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
+    "typescript": "5.1.6"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "uuid": "^9.0.0"
+  }
+}

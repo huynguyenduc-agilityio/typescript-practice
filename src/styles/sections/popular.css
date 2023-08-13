@@ -1,0 +1,38 @@
+.popular {
+  background: #ececec;
+  padding-top: 48px;
+  padding-bottom: 33px;
+}
+
+.popular .product-item {
+  background: var(--white-color);
+}
+
+.popular .product-image-frame {
+  height: 278px;
+}
+
+.popular .product-image {
+  height: 260px;
+  width: 314px;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .popular {
+    padding-top: 88px;
+    padding-bottom: 33px;
+  }
+
+  .popular .container {
+    padding-left: 88px;
+    padding-right: 88px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .popular {
+    padding-bottom: 88px;
+  }
+}

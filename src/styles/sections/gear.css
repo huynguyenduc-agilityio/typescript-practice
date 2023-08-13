@@ -1,0 +1,131 @@
+.gear {
+  padding-top: 40px;
+  padding-bottom: 54px;
+}
+.gear .product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.gear .product-item {
+  width: 100%;
+}
+
+.gear .product-image-frame {
+  height: 311px;
+}
+
+.gear-info {
+  padding: 32px;
+  border-bottom-left-radius: var(--xs-radius);
+  border-bottom-right-radius: var(--xs-radius);
+}
+
+.gear-details {
+  display: grid;
+  gap: 4px;
+}
+
+.gear-info-grey {
+  background: var(--light-color);
+}
+
+.gear-info-dark {
+  background: var(--dark-color);
+}
+
+.gear-info-grey .gear-title {
+  color: var(--text-bold-color);
+}
+
+.gear-info-grey .gear-subhead {
+  color: var(--text-default-color);
+}
+
+.gear-info-dark .gear-title {
+  color: var(--text-white-color);
+}
+
+.gear-info-dark .gear-subhead {
+  color: #c4c4c4;
+}
+
+.gear .product-item:nth-child(3) {
+  display: none;
+}
+
+.gear .product-item:nth-child(n + 3) {
+  order: -1;
+}
+
+@media (min-width: 768px) {
+  .gear {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .gear .product-list {
+    gap: 48px 32px;
+  }
+
+  .gear .product-item {
+    flex: 1 0 calc(50% - 32px);
+  }
+
+  .gear .product-item:nth-child(n + 2) {
+    flex-basis: calc(50% - 32px);
+  }
+
+  .gear .product-item:nth-child(n + 3) {
+    order: 1;
+  }
+
+  .gear .product-image-frame {
+    height: 487px;
+  }
+
+  .product-item:first-child .gear-info {
+    background: var(--dark-color);
+  }
+
+  .product-item:nth-child(2) .gear-info {
+    background: var(--light-color);
+  }
+
+  .product-item:first-child .gear-title {
+    color: var(--text-white-color);
+  }
+
+  .product-item:first-child .gear-subhead {
+    color: #c4c4c4;
+  }
+
+  .product-item:nth-child(2) .gear-title {
+    color: var(--text-bold-color);
+  }
+
+  .product-item:nth-child(2) .gear-subhead {
+    color: var(--text-default-color);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .gear {
+    padding-top: 88px;
+    padding-bottom: 88px;
+  }
+
+  .gear .product-item:nth-child(n + 3) {
+    flex-basis: calc((100% / 3) - 32px);
+  }
+
+  .gear .product-item:nth-child(3) {
+    display: block;
+  }
+
+  .gear .product-image-frame {
+    height: 480px;
+  }
+}

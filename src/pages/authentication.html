@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authentication</title>
+    <link rel="stylesheet" href="../styles/main.css" />
+    <script src="../script/main.ts" type="module" defer></script>
+  </head>
+
+  <body>
+    <main class="main-content wrapper-auth flex-center">
+      <div class="inner-auth">
+        <div class="header-form">
+          <!-- Header  -->
+          <hgroup class="header-title">
+            <h1 class="header-title-auth">My account</h1>
+            <h1 class="header-title-auth hidden">Sign up</h1>
+          </hgroup>
+          <div class="header-action-auth flex-center">
+            <button class="header-action-signIn active">Sign in</button>
+            <button class="header-action-register">Register</button>
+          </div>
+        </div>
+
+        <!-- Form  -->
+        <form class="form form-login" action="/">
+          <div class="input-group">
+            <input id="email" type="email" class="form-control" autocomplete placeholder="Email" />
+            <span id="email-error" class="error-message"></span>
+          </div>
+          <div class="input-group">
+            <input id="password" type="password" class="form-control" placeholder="Password" />
+            <span id="password-error" class="error-message"></span>
+          </div>
+          <div class="input-group hidden">
+            <input
+              id="confirmPassword"
+              type="password"
+              class="form-control"
+              placeholder="Confirm password"
+            />
+            <span id="confirmPassword-error" class="error-message"></span>
+          </div>
+          <button type="submit" class="btn-submit">Sign in</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
