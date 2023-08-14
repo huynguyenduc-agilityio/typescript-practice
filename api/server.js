@@ -22,6 +22,8 @@ server.use((req, res, next) => {
 // Add this before server.use(router)
 server.use(jsonServer.rewriter({
     '/api/*': '/$1',
+    '/authentication': '/authentication', // Define the custom route for /authentication
+    '/cart': '/cart', // Define the custom route for /cart
 }));
 
 server.use(router);
