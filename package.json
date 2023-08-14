@@ -5,7 +5,7 @@
   "source": "src/pages/*.html",
   "scripts": {
     "dev": "concurrently \"npm start\" \"npm run start-db\"",
-    "start-db": "node src/server/index.json",
+    "start-db": "node api/server.js",
     "start": "rm -rf dist && rm -rf .parcel-cache && parcel src/pages/*.html",
     "build": "rm -rf dist && rm -rf .parcel-cache && parcel build src/pages/*.html"
   },
