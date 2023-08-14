@@ -5,12 +5,10 @@
       "includeFiles": "src/server/index.json"
     }
   },
-  "builds": [
-    { "src": "api/server.js", "use": "@vercel/node" },
-    { "src": "src/**/*", "use": "@vercel/static" }
-  ],
-  "routes": [
-    { "src": "/api/.*", "dest": "/api/server.js" },
-    { "src": "/(.*)", "dest": "/src/$1" }
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "api/server.js"
+    }
   ]
 }
