@@ -11,8 +11,9 @@ export default class ApiService<T> {
   }
 
   /**
-   * get data from server
+   * @description get data from server
    * @param {String} path request path
+   * @param {String} query option
    * @returns data after request
    */
   get = async (query?: string): Promise<T[]> => {
@@ -27,7 +28,25 @@ export default class ApiService<T> {
   };
 
   /**
-   * Post new data to server
+   * @description get data detail by id from server
+   * @param {String} path request path
+   * @param {String} id
+   * @param {String} query option
+   * @returns data after request
+   */
+  getById = async (id: string, query?: string): Promise<T> => {
+    try {
+      const url = `${this.fullPath}/${id}?${query}`;
+      const response = await fetch(url);
+
+      return response.json();
+    } catch (error: any) {
+      throw new Error(error);
+    }
+  };
+
+  /**
+   * @description post new data to server
    * @param {String} path request path
    * @param {Object} data
    * @returns data after request
@@ -47,8 +66,9 @@ export default class ApiService<T> {
   };
 
   /**
-   * Delete data at server
+   * @description delete data at server
    * @param {String} path request path
+   * @returns data after request
    */
   remove = async (): Promise<void> => {
     try {
@@ -61,14 +81,15 @@ export default class ApiService<T> {
   };
 
   /**
-   * Update data at server
+   * @description update data at server
    * @param {String} path request path
    * @param {Object} data
+   * @param {id} string
    * @returns data after request
    */
-  update = async (data: T): Promise<T> => {
+  update = async (data: T, id: string): Promise<T> => {
     try {
-      const response = await fetch(this.fullPath, {
+      const response = await fetch(`${this.fullPath}/${id}`, {
         method: HTTP_METHODS.PATCH,
         headers: API_HEADERS,
         body: JSON.stringify(data),

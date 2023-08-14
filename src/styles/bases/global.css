@@ -20,7 +20,7 @@ a {
   display: none !important;
 }
 
-body:has(#modal.open) {
+body:has(.modal-container.open, .header-mobile) {
   overflow: hidden;
 }
 

@@ -9,15 +9,19 @@ export class HomeView {
   private selectedProduct: Nullable<Product>;
   private modalContainer: Nullable<HTMLDivElement>;
   private isAuth: string;
+  private addToCartHandler: (product: Product) => Promise<void>;
 
   constructor() {
     this.selectedProduct = null;
     this.modalContainer = null;
     this.isAuth = LocalStorage.getItem(LocalStorageType.SIGNIN);
+    this.addToCartHandler = async () => {};
   }
 
-  init(bindHome: () => Promise<void>) {
+  init(bindHome: () => Promise<void>, handleAddToCart: (product: Product) => Promise<void>) {
     bindHome();
+    this.bindShowSidebar();
+    this.addToCartHandler = handleAddToCart; // Store the controller's function
   }
 
   bindProductSection(products: Product[], category: string): void {
@@ -71,35 +75,33 @@ export class HomeView {
       if (!this.modalContainer) {
         // Create a new modal container if it doesn't exist
         this.modalContainer = document.createElement('div');
+        this.modalContainer.classList.add('modal-container');
         mainBodyElement.appendChild(this.modalContainer);
       }
 
-      // Update the modal container content with the new product information
-      this.modalContainer.innerHTML = renderModal(product);
-      this.handleShowModal();
-
-      const closeModalEL: HTMLButtonElement = querySelector('#modal .btn-close');
-
-      // Add click event for modal close button
-      closeModalEL.addEventListener('click', () => {
-        this.handleCloseModal();
-      });
+      this.handleShowModal(product);
+      this.handleCloseModal();
       this.handleAddToCart(product);
     }
   };
 
-  handleShowModal = () => {
-    const modal = getElementById<HTMLElement>('modal');
+  handleShowModal = (product: Nullable<Product>): void => {
+    this.modalContainer?.classList.add('open');
 
-    modal?.classList.add('open');
+    // Update the modal container content with the new product information
+    if (this.modalContainer && product) {
+      this.modalContainer.innerHTML = renderModal(product);
+    }
   };
 
   handleCloseModal = () => {
     // Delete saved product information when closing modal
-    this.selectedProduct = null;
-
-    const modal = getElementById<HTMLElement>('modal');
-    modal?.classList.remove('open');
+    const closeModalEL: HTMLButtonElement = querySelector('.modal-container .btn-close');
+    // Add click event for modal close button
+    closeModalEL.onclick = () => {
+      this.modalContainer?.classList.remove('open');
+      this.selectedProduct = null;
+    };
   };
 
   // Bind click button log out
@@ -123,17 +125,31 @@ export class HomeView {
 
     // Add click event for modal add to cart button
     buttonAddCartEl.addEventListener('click', () => {
-      const productsInCart = JSON.parse(LocalStorage.getItem('cart') || '[]');
-
       // If not accout, return redirect authentication
       if (!this.isAuth) {
         redirect(DEFAULT_ROUTER.AUTHENTICATION);
       }
 
-      // Push the product you just added to the cart
-      productsInCart.push(product);
-      LocalStorage.setItem('cart', JSON.stringify(productsInCart));
-      this.handleCloseModal();
+      this.addToCartHandler(product);
+      this.modalContainer?.classList.remove('open');
+    });
+  };
+
+  private bindShowSidebar = () => {
+    const menuToggleElement: HTMLDivElement = getElementById('toggle-menu');
+    const headerElement: HTMLDivElement = querySelector('.header');
+    const navbarElement: HTMLDivElement = querySelector('.navbar');
+    const navListElement: HTMLDivElement = querySelector('.navbar-list');
+
+    menuToggleElement.addEventListener('click', (event: MouseEvent) => {
+      headerElement.classList.add('header-mobile');
+      event.stopPropagation();
+    });
+
+    navbarElement.addEventListener('click', (event) => {
+      if (!navListElement.contains(event.target as Node)) {
+        headerElement.classList.remove('header-mobile');
+      }
     });
   };
 }

@@ -3,7 +3,6 @@ import { Product } from '../types';
 export const renderModal = (product: Product): string => {
   const { image, name, price, stockCount, description } = product;
   return `
-  <div class="modal-container" id="modal">
   <div class="popup">
   <div class="header-popup"><span class="btn-close">×</span></div>
   <div class="content-popup">
@@ -32,7 +31,6 @@ export const renderModal = (product: Product): string => {
         </div>
     </div>
   </div>
-</div>
   </div>
   `;
 };

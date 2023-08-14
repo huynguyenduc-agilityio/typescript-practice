@@ -18,6 +18,10 @@ export const router = (pathName: string): void => {
     LocalStorage.clear();
   }
 
+  if (!isAuth && pathName === DEFAULT_ROUTER.CART) {
+    redirect(DEFAULT_ROUTER.AUTHENTICATION);
+  }
+
   // If not correct router find
   if (!currentRouter) {
     redirect(DEFAULT_ROUTER.HOME);

@@ -1,7 +1,5 @@
 .modal-container {
   display: flex;
-  visibility: hidden;
-  opacity: 0;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -9,12 +7,18 @@
   right: 0;
   z-index: 10;
   background: rgba(0, 0, 0, 0.7);
+  padding: 0 24px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.header-popup {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .header-popup .btn-close {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
   transition: all 200ms;
   font-size: var(--lg-font-size);
   text-decoration: none;
@@ -38,15 +42,12 @@
 }
 
 .body-popup {
-  padding: 20px;
-  display: flex;
-  justify-content: center;
+  display: grid;
   gap: 20px;
 }
 
 .info-popup {
-  width: 80%;
-  gap: 48px;
+  gap: 16px;
   display: flex;
   flex-direction: column;
 }
@@ -57,13 +58,28 @@
   gap: 16px;
 }
 
-#modal.open {
+.modal-container.open {
   visibility: visible;
   opacity: 1;
-  transition: all 0.5s ease;
 }
 
 .modal-container .btn-main {
   padding-top: 16px;
   padding-bottom: 16px;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .body-popup {
+    display: flex;
+    justify-content: center;
+  }
+
+  .info-popup {
+    width: 80%;
+  }
+
+  .info-popup {
+    gap: 48px;
+  }
 }

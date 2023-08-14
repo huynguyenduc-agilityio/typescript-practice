@@ -1,12 +1,15 @@
 import { ROUTES } from '../constants';
+import { CART_MESSAGE } from '../constants/message';
 import { LocalStorage } from '../helpers';
 import { HomeModel } from '../models';
-import { LocalStorageType, DEFAULT_CATEGORY, DEFAULT_ROUTER, Product } from '../types';
+import { DEFAULT_CATEGORY, DEFAULT_ROUTER, LocalStorageType, Product } from '../types';
+import { Toast } from '../utils/toast';
 import { HomeView } from '../views';
 
 export class HomeController {
   model: HomeModel;
   view: HomeView;
+  private toast: Toast = new Toast();
 
   constructor(model: HomeModel, view: HomeView) {
     this.model = model;
@@ -15,7 +18,7 @@ export class HomeController {
   }
 
   init() {
-    this.view.init(this.bindHome);
+    this.view.init(this.bindHome, this.handleAddToCart);
   }
 
   bindHome = async () => {
@@ -58,6 +61,26 @@ export class HomeController {
         this.view.bindProductSection(numberPopularDisplay, DEFAULT_CATEGORY.Popular);
         this.view.bindProductSection([], DEFAULT_CATEGORY.Gear);
         break;
+    }
+  };
+
+  handleAddToCart = async (product: Product): Promise<void> => {
+    const cartId: string = LocalStorage.getItem(LocalStorageType.CART);
+    const newItemCart = { productId: product.id, quantity: 1 };
+
+    try {
+      // If id cart has, return update cart list
+      if (cartId) {
+        await this.model.handleUpdateCart(cartId, newItemCart, product);
+      }
+      // Else return add cart
+      else {
+        const response = await this.model.handleAddCart(newItemCart);
+        LocalStorage.setItem(LocalStorageType.CART, response.id);
+      }
+      this.toast.success({ message: CART_MESSAGE.successAddCart });
+    } catch (error) {
+      this.toast.error({ message: CART_MESSAGE.errorAddCart });
     }
   };
 }
