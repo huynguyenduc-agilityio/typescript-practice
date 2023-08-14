@@ -2,7 +2,7 @@
   "name": "typescript-training",
   "version": "1.0.0",
   "description": "",
-  "source": "src/pages/*.html",
+  "source": "src/pages/index.html",
   "scripts": {
     "dev": "concurrently \"npm start\" \"npm run start-db\"",
     "start-db": "node api/server.js",
