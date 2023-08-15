@@ -2,7 +2,7 @@
   "functions": {
     "api/server.js": {
       "memory": 1024,
-      "includeFiles": "src/server/index.json"
+      "includeFiles": "server/index.json"
     }
   },
   "rewrites": [
