@@ -10,6 +10,9 @@
       "source": "/api/(.*)",
       "destination": "api/server.js"
     },
-    { "source": "/authentication", "destination": "/" }
+    { "source": "/authentication", "destination": "/" },
+    { "source": "/cart", "destination": "/" },
+    { "source": "/new-product", "destination": "/" },
+    { "source": "/popular", "destination": "/" }
   ]
 }
